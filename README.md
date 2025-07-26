@@ -20,3 +20,5 @@ CitiFix is a simple full-stack web app that lets citizens report local public is
 **Map Integration**: Leaflet.js (optional)  
 **Tools**: DBeaver, Git, Canva (for logo/UI design)
 
+[CitiFix Live App on Vercel]:
+https://citi-fix.vercel.app/
