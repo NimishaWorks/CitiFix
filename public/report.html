@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Report Issue - CitiFix</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="assets/logo.png" alt="CitiFix Logo" class="nav-logo" />
+            <span>CitiFix</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="report.html" class="active"><i class="fas fa-edit"></i> Report</a></li>
+            <li><a href="issues.html"><i class="fas fa-list-alt"></i> Issues</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <h2>Report an Issue</h2>
+        <form id="report-form" method="POST" action="http://localhost:5000/report" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Issue Title:</label>
+                <input type="text" id="title" name="title" placeholder="Enter issue title" required />
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" placeholder="Describe the issue in detail..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="type">Issue Type:</label>
+                <select id="type" name="type" required>
+                    <option value="">Select Issue Type</option>
+                    <option value="Pothole">Pothole</option>
+                    <option value="Garbage">Garbage</option>
+                    <option value="Streetlight">Streetlight</option>
+                    <option value="Water Leakage">Water Leakage</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <div class="location-inputs">
+                    <input type="text" id="latitude" name="latitude" placeholder="Latitude" required />
+                    <input type="text" id="longitude" name="longitude" placeholder="Longitude" required />
+                </div>
+                <button type="button" id="getLocation" class="secondary-button">
+                    <i class="fas fa-map-marker-alt"></i> Get Current Location
+                </button>
+            </div>
+
+            <div class="form-group">
+                <label for="images">Upload Images:</label>
+                <input type="file" id="images" name="image" accept="image/*" />
+                <div id="imagePreview" class="image-preview"></div>
+            </div>
+
+            <button type="submit" class="submit-button">
+                <i class="fas fa-paper-plane"></i> Submit Report
+            </button>
+        </form>
+        <p id="statusMsg" class="status-message"></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CitiFix. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

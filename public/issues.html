@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Current Issues - CitiFix</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="assets/logo.png" alt="CitiFix Logo" class="nav-logo" />
+            <span>CitiFix</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="report.html"><i class="fas fa-edit"></i> Report</a></li>
+            <li><a href="issues.html" class="active"><i class="fas fa-list-alt"></i> Issues</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <h2>Current Issues</h2>
+        <div class="filter-section">
+            <select id="filterType">
+                <option value="">All Types</option>
+                <option value="Pothole">Pothole</option>
+                <option value="Garbage">Garbage</option>
+                <option value="Streetlight">Streetlight</option>
+                <option value="Water Leakage">Water Leakage</option>
+                <option value="Other">Other</option>
+            </select>
+            <select id="filterStatus">
+                <option value="">All Status</option>
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Resolved">Resolved</option>
+            </select>
+        </div>
+
+        <div id="issues-grid" class="issues-grid"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CitiFix. All rights reserved.</p>
+    </footer>
+
+    <script src="issues.js"></script>
+</body>
+</html>
